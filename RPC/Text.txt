@@ -1,0 +1,9 @@
+=============py==========
+
+RPC
+login: regex to check a valid email
+write: 1, add newly bought book(via class Book); 2, a book is borrowed; 3, a book is replaced
+query(user): get the availability of books
+query(admin): get a list of book status
+
+notify: send mail
