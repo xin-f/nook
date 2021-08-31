@@ -1,7 +1,7 @@
 ﻿#ifndef __IBOOK_H__
 #define __IBOOK_H__
 
-#include "basics.h"
+#include "../basic/basics.h"
 #include "Owner.h"
 /*
 把借出去的书按时间降序排列，每次只需要检查第一本，如果没到期，break；如果到期，发邮件，检查下一本。
@@ -13,16 +13,15 @@ class IBook
 protected:
 	string* name;
 	string* author;
-	Owner* owner; //不能用引用，因为没法在ctor里给初值。
-	static int cnt;
-	static int available_cnt;
 	//a user can borrow multiple books, but a book can be obtained by only one user simultaneously. So the time stampe 
 	//goes with book. Time value is stored in time_point, unless it is printed.
 	chrono::system_clock::time_point time_borrow; //1970-1-1 8:0:0
+	chrono::system_clock::time_point time_return; //1970-1-1 8:0:0
+	Owner* owner; //不能用引用，因为没法在ctor里给初值。
 
 private:
 	IBook() = default;
-	IBook(string* name, Owner* o, string* aut);
+	IBook(string* name,  string* aut);
 	~IBook();
 
 public:

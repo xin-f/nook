@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="nook\auxiliaries.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="nook\BookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,14 +30,20 @@
     <ClCompile Include="nook\UserManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="rpc\interact.cpp">
+    <ClCompile Include="DAO\sqlite3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DAO\DAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic\auxiliaries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IPC\interact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="nook\basics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="nook\BookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -53,7 +56,13 @@
     <ClInclude Include="nook\UserManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="books\books.h">
+    <ClInclude Include="DAO\sqlite3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DAO\DAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="basic\basics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

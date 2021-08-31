@@ -2,7 +2,7 @@
 #define __BOOKMANAGER__
 
 #include "IBook.h"
-#include <map>
+//#include <map>
 
 
 class BookManager
@@ -11,7 +11,7 @@ private:
 	BookManager() = default;
 	BookManager(const BookManager& bm) = delete;
 
-	multimap <string&, IBook*> bookList;
+//	multimap <string&, IBook*> bookList;
 	IBook* getBookByName(string& name);
   
 public:
@@ -19,8 +19,10 @@ public:
 		static BookManager bm;
 		return &bm;
 	}
-
-	void addNewBook(string *, Owner* o, string*);
+	void func() {
+		std::cout << "test" << endl;
+	}
+	void addNewBook(string name, string author);
 	void deleteBook(string*);
 	void borrow(IBook* , string ) ;
 	void replace(IBook* , string ) ;

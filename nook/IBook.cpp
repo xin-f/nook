@@ -12,13 +12,11 @@ int IBook::getDuration() {
 	return 0;
 }
 
-IBook::IBook(string* name, Owner* o = nullptr, string* aut = nullptr)
+IBook::IBook(string* name, string* aut = nullptr)
 {
 	this->name = name;
 	author = aut;
-	owner = o;
-	cnt++;
-	available_cnt++;
+	owner = nullptr;
 }
 
 IBook::~IBook()
@@ -26,12 +24,5 @@ IBook::~IBook()
 	name = nullptr;
 	author = nullptr;
 	owner = nullptr;
-	cnt--;
-	available_cnt--;
-	//todo: for debug
-	if (cnt < 0 || available_cnt < 0)
-		cout << "error " << cnt << " " << available_cnt << endl;
 }
 
-int IBook::cnt = 0;
-int IBook::available_cnt = 0;

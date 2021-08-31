@@ -75,11 +75,14 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,17 +101,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="nook\auxiliaries.cpp" />
+    <ClCompile Include="DAO\DAO.cpp" />
+    <ClCompile Include="DAO\sqlite3.c" />
+    <ClCompile Include="basic\auxiliaries.cpp" />
     <ClCompile Include="nook\BookManager.cpp" />
     <ClCompile Include="nook\IBook.cpp" />
     <ClCompile Include="nook\main.cpp" />
     <ClCompile Include="nook\Owner.cpp" />
     <ClCompile Include="nook\UserManager.cpp" />
-    <ClCompile Include="rpc\interact.cpp" />
+    <ClCompile Include="IPC\interact.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="books\books.h" />
-    <ClInclude Include="nook\basics.h" />
+    <ClInclude Include="DAO\DAO.h" />
+    <ClInclude Include="DAO\sqlite3.h" />
+    <ClInclude Include="basic\basics.h" />
     <ClInclude Include="nook\BookManager.h" />
     <ClInclude Include="nook\IBook.h" />
     <ClInclude Include="nook\Owner.h" />

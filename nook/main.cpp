@@ -1,5 +1,5 @@
-﻿#include "basics.h"
-
+﻿#include "../basic/basics.h"
+#include "BookManager.h"
 /*
 瀚海
 
@@ -13,7 +13,6 @@ flask
 
 */
 
-using namespace std;
 
 
 double operator"" _mm(long double x) { return x / 1000; }
@@ -33,6 +32,9 @@ using namespace std::chrono_literals;               // C++14才能用
 //using namespace std::literals::chrono_literals;
 int main() {
 
+  BookManager::getInstance()->addNewBook("Effective Modern C++", "S C");
+
+#if 0
 	const std::chrono::minutes& duration = 24_heima;    // 24会传递给参数m
 
 	std::cout << "输出:" << duration.count() << std::endl;
@@ -52,5 +54,6 @@ int main() {
     std::cout << "消耗的时间5：" << 12min.count() << std::endl;
     123min.count();
 
+#endif
 //	system("pause");
 }

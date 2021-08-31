@@ -1,31 +1,22 @@
 #include "BookManager.h"
+#include "../DAO/DAO.h"
 
 
 
-
-void BookManager::addNewBook(string* name, Owner* o = nullptr, string* aut = nullptr)
+void BookManager::addNewBook(string name, string aut = nullptr)
 {
-	IBook* book = new IBook(name, o, aut);
-	bookList.emplace(name, book);
+	IBook* book = new IBook(&name, &aut);
+	//todo: 是否有必要把book实例作为blob放到数据库里？
+	DAO::getInstance()->insert(name, aut);
 }
 
 void BookManager::deleteBook(string* name)
 {
-	if(bookList.count(*name) > 1)
-	if (bookList[book] == 0)
-	{
-		delete book;
-		bookList.erase(book);
-	}
 }
 
 IBook* BookManager::getBookByName(string& name)
 {
-	for (auto it = bookList.begin(); it != bookList.end(); it++) {
-		if (it->first == name)
-			return it->second;
-	}
-	return nullptr; 
+	return nullptr;
 }
 
 void BookManager::borrow(IBook* book, string user_id) {
