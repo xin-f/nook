@@ -33,6 +33,7 @@ using namespace std::chrono_literals;               // C++14才能用
 int main() {
 
   BookManager::getInstance()->addNewBook("Effective Modern C++", "S C");
+  BookManager::getInstance()->addNewBook("Effective Modern C++", "S C");
 
 #if 0
 	const std::chrono::minutes& duration = 24_heima;    // 24会传递给参数m

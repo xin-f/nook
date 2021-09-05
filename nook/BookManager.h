@@ -3,7 +3,10 @@
 
 #include "IBook.h"
 //#include <map>
-
+#ifdef _HAS_STD_BYTE
+#undef _HAS_STD_BYTE
+#endif
+#define _HAS_STD_BYTE 0
 
 class BookManager
 {
@@ -11,21 +14,19 @@ private:
 	BookManager() = default;
 	BookManager(const BookManager& bm) = delete;
 
-//	multimap <string&, IBook*> bookList;
-	IBook* getBookByName(string& name);
+//	multimap <std::string&, IBook*> bookList;
+	IBook* getBookByName(std::string& name);
   
 public:
 	static BookManager* getInstance() {
 		static BookManager bm;
 		return &bm;
 	}
-	void func() {
-		std::cout << "test" << endl;
-	}
-	void addNewBook(string name, string author);
-	void deleteBook(string*);
-	void borrow(IBook* , string ) ;
-	void replace(IBook* , string ) ;
+
+	void addNewBook(std::string name, std::string author);
+	void deleteBook(std::string*);
+	void borrow(IBook* , std::string ) ;
+	void replace(IBook* , std::string ) ;
 
 	void notify() {
 		//send mail as a reminder

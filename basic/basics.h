@@ -23,9 +23,10 @@ flask
 #include <ctime>
 #include <chrono>
 #include <iostream>
+#include <ratio>  //std::ratio<>
 
 
-using namespace std;
+//using namespace std;
 using namespace std::chrono;
 
 //for sleep() system call
@@ -40,8 +41,8 @@ using namespace std::chrono;
 #endif
 
 
-typedef std::chrono::duration<int, std::ratio<60 * 60>> hours_type;
-typedef chrono::duration<int, ratio<24 * 60 * 60>> Day;
+typedef std::chrono::duration<int, std::ratio<60 * 60> > hours_type;
+typedef std::chrono::duration<int, std::ratio<24 * 60 * 60> > Day;
 
 #if 0
 unsigned long long operator"" _days(unsigned long long x) {
@@ -59,6 +60,6 @@ extern system_clock::time_point now; //only for test
 	ipc,
 };
 
-void info(string, ErrCat  cat = ErrCat::general);
+void info(std::string, ErrCat  cat = ErrCat::general);
 
 #endif // !__BASICS_H__

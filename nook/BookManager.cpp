@@ -1,7 +1,7 @@
 #include "BookManager.h"
 #include "../DAO/DAO.h"
 
-
+using namespace std;
 
 void BookManager::addNewBook(string name, string aut = nullptr)
 {

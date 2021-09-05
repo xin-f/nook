@@ -11,9 +11,9 @@ class Owner
 private:
 
 public:
-	vector<IBook*> borrowed_list;
-	string email;
-	string name;
+	std::vector<IBook*> borrowed_list;
+	std::string email;
+	std::string name;
 };
 
 

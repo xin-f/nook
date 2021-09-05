@@ -1,6 +1,8 @@
 
 #include "basics.h"
 
+using namespace std;
+
 void my_sleep(int sec) {
 #if _Windows
 	Sleep(sec * 1000);
@@ -11,6 +13,6 @@ void my_sleep(int sec) {
 #endif
 }
 
-void info(string str, ErrCat  general) {
+void info(std::string str, ErrCat  general) {
 	cout << "Info: " + str << endl;
 }

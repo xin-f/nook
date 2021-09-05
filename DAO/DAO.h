@@ -21,12 +21,16 @@ private:
 	DAO(const DAO&) = delete;
 	DAO& operator=(const DAO&) = delete;
 
+
+	static int count;
+
 	sqlite3* db;
-	bool open_db(std::string path = { "nook.db" });
+	bool open_db(std::string path = { "./nook.db" });
 	void close_db();
 	static int callback_create(void* data, int argc, char** argv, char** azColName);
 	static int callback_insert(void* data, int argc, char** argv, char** azColName);
-	int callback_select(void* data, int argc, char** argv, char** azColName);
+	static int callback_select(void* data, int argc, char** argv, char** azColName);
+	static int callback_select_count(void* data, int argc, char** argv, char** azColName);
 	int callback_update(void* data, int argc, char** argv, char** azColName);
 	int callback_delete(void* data, int argc, char** argv, char** azColName);
 	//static DAO* ins;
